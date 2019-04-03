@@ -48,7 +48,7 @@ create or replace type body ut_compound_data_value as
       execute immediate '
           select xmlserialize( content ucd.item_data no indent)
             from '|| ut_utils.ut_owner ||q'[.ut_compound_data_tmp tmp
-            ,xmltable ( '/ROWSET' passing tmp.item_data
+            ,xmltable ( '/ROWSET' passing xmltype(tmp.item_data)
             columns item_data xmltype PATH '*'         
             ) ucd
            where tmp.data_id = :data_id

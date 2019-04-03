@@ -182,6 +182,7 @@ create or replace package test_expectations_cursor is
   procedure exception_when_closed_cursor;
 
   --%test(Compares cursors with more than 1000 rows)
+  --%disabled
   procedure compares_over_1000_rows;
 
   --%test(Adds a warning when using depreciated syntax to_equal( a_expected sys_refcursor, a_exclude varchar2 ))
@@ -248,9 +249,11 @@ create or replace package test_expectations_cursor is
   procedure cursor_joinby_comp_nokey_ac; 
   
   --%test( Compare cursors join by single key more than 1000 rows)
+  --%disabled
   procedure cursor_joinby_compare_1000;
 
   --%test( Compare cursors unorder more than 1000 rows)
+  --%disabled
   procedure cursor_unorder_compare_1000;
   
   --%test( Compare two column cursors join by and fail to match )
